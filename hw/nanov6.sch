@@ -8453,6 +8453,8 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="U$16" library="ak-supply" deviceset="GND" device=""/>
 <part name="R3" library="rcl" deviceset="R-US_" device="R0805" value="1k"/>
 <part name="U$17" library="ak-supply" deviceset="GND" device=""/>
+<part name="R4" library="rcl" deviceset="R-US_" device="R0805" value="1k"/>
+<part name="U$18" library="ak-supply" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8502,7 +8504,10 @@ Wurth 744045100</text>
 <instance part="U$50" gate="G$1" x="157.48" y="129.54"/>
 <instance part="R13" gate="G$1" x="101.6" y="147.32" rot="R180"/>
 <instance part="U$4" gate="G$1" x="208.28" y="152.4"/>
-<instance part="R7" gate="G$1" x="223.52" y="129.54" rot="R270"/>
+<instance part="R7" gate="G$1" x="223.52" y="129.54" smashed="yes" rot="R270">
+<attribute name="NAME" x="224.79" y="131.0386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="224.79" y="128.778" size="1.778" layer="96"/>
+</instance>
 <instance part="U2" gate="G$1" x="137.16" y="106.68"/>
 <instance part="R8" gate="G$1" x="154.94" y="93.98" rot="R270"/>
 <instance part="R9" gate="G$1" x="162.56" y="101.6" rot="R180"/>
@@ -8518,7 +8523,9 @@ Wurth 744045100</text>
 <instance part="U$12" gate="G$1" x="287.02" y="132.08"/>
 <instance part="U$13" gate="G$1" x="99.06" y="116.84"/>
 <instance part="U$14" gate="G$1" x="266.7" y="160.02"/>
-<instance part="BLEN" gate="1" x="116.84" y="101.6"/>
+<instance part="BLEN" gate="1" x="111.76" y="101.6" smashed="yes">
+<attribute name="NAME" x="111.76" y="99.06" size="1.27" layer="96" rot="R180"/>
+</instance>
 <instance part="CON1" gate="G$2" x="276.86" y="27.94"/>
 <instance part="U$5" gate="G$1" x="266.7" y="20.32"/>
 <instance part="U$2" gate="G$1" x="124.46" y="30.48"/>
@@ -8527,8 +8534,16 @@ Wurth 744045100</text>
 <instance part="U$15" gate="G$1" x="139.7" y="30.48"/>
 <instance part="Q1" gate="G$1" x="223.52" y="147.32" rot="R90"/>
 <instance part="U$16" gate="G$1" x="223.52" y="119.38"/>
-<instance part="R3" gate="G$1" x="297.18" y="132.08" rot="R270"/>
+<instance part="R3" gate="G$1" x="297.18" y="132.08" smashed="yes" rot="R270">
+<attribute name="NAME" x="298.45" y="133.5786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="298.45" y="131.318" size="1.778" layer="96"/>
+</instance>
 <instance part="U$17" gate="G$1" x="297.18" y="121.92"/>
+<instance part="R4" gate="G$1" x="114.3" y="96.52" smashed="yes" rot="R270">
+<attribute name="NAME" x="113.03" y="97.5614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="113.03" y="94.742" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="U$18" gate="G$1" x="114.3" y="86.36"/>
 </instances>
 <busses>
 </busses>
@@ -8666,6 +8681,11 @@ Wurth 744045100</text>
 <pinref part="U$17" gate="G$1" pin="GND"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="297.18" y1="124.46" x2="297.18" y2="127" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="U$18" gate="G$1" pin="GND"/>
+<wire x1="114.3" y1="91.44" x2="114.3" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="CLKLOW" class="0">
@@ -9007,12 +9027,16 @@ Wurth 744045100</text>
 <net name="BL" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="EN"/>
-<wire x1="121.92" y1="104.14" x2="116.84" y2="104.14" width="0.1524" layer="91"/>
-<label x="111.76" y="104.14" size="1.778" layer="95"/>
+<wire x1="121.92" y1="104.14" x2="114.3" y2="104.14" width="0.1524" layer="91"/>
+<label x="106.68" y="104.14" size="1.778" layer="95"/>
 <pinref part="BLEN" gate="1" pin="1"/>
-<wire x1="116.84" y1="104.14" x2="109.22" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="101.6" x2="116.84" y2="104.14" width="0.1524" layer="91"/>
-<junction x="116.84" y="104.14"/>
+<wire x1="114.3" y1="104.14" x2="111.76" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="104.14" x2="104.14" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="101.6" x2="111.76" y2="104.14" width="0.1524" layer="91"/>
+<junction x="111.76" y="104.14"/>
+<pinref part="R4" gate="G$1" pin="1"/>
+<wire x1="114.3" y1="101.6" x2="114.3" y2="104.14" width="0.1524" layer="91"/>
+<junction x="114.3" y="104.14"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="11"/>
